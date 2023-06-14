@@ -1,9 +1,9 @@
 import { View, StyleSheet, Text } from 'react-native';
 
-export function Search(){
+export function Profile(){
     return(
         <View styles={styles.container}>
-            <Text>Página - Buscar</Text>
+            <Text>Página - Perfil</Text>
         </View>
     )
 }
