@@ -6,11 +6,11 @@ export function Home(){
             
             <View style={styles.labels}>
                 <TouchableOpacity>
-                    <Text style={styles.labelsText}>Seguindo</Text>
+                    <Text style={[styles.labelsText, { color: "#ddd"}]}>Seguindo</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity>
-                    <Text style={styles.labelsText}>Pra Você
+                    <Text style={[styles.labelsText, { color: "#fff"}]}>Pra Você
                     </Text>
                     <View style={styles.indicator}>
                     </View>
@@ -39,6 +39,6 @@ const styles = StyleSheet.create({
         zIndex: 99,
     },
     labelsText:{
-        color: "#fff"
+        
     }
 })
