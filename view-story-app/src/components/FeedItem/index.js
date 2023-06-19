@@ -1,9 +1,11 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Pressable } from "react-native";
+
+import {Video } from 'expo-av'
 
 export function FeedItem( {data} ) {
     return (
-        <View>
-            <Text style={{ color: '#fff'}}>{data.name}</Text>
-        </View>
+        <Pressable>
+            
+        </Pressable>
     )
 }
