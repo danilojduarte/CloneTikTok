@@ -1,4 +1,4 @@
-import { useRef, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import { View, Text, StyleSheet, Pressable, Dimensions } from "react-native";
 import {Video } from 'expo-av'
 
@@ -13,6 +13,7 @@ export function FeedItem( {data} ) {
                 ref={video}
                 style={{width: '100%', height: heightScreen }}
                 source={{ uri:data?.video}}
+                resizeMode="cover"
             />
         </Pressable>
     )
