@@ -9,7 +9,7 @@ export function FeedItem( {data} ) {
     const [status, setStatus] = useState({})
 
     function handlePlayer(){
-        alert("teste")
+        status.isPlaying ? video.current?.pauseAsync() : video.current?.playAsync()
     }
 
     return (
