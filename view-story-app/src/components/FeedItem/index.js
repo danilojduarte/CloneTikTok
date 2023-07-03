@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-import { View, Text, StyleSheet, Pressable, Dimensions } from "react-native";
+import { View, Text, StyleSheet, Pressable, Dimensions, TouchableOpacity } from "react-native";
 import {Video } from 'expo-av'
 
 import { Ionicons } from '@expo/vector-icons'
@@ -24,6 +24,22 @@ export function FeedItem( {data} ) {
             >
                 <Text style={styles.name}>{data?.name}</Text>
                 <Text numberOfLines={2} style={styles.description}>{data?.description}</Text>
+            </View>
+
+            <View style={styles.actions}>
+                <TouchableOpacity>
+                    <Ionicons name="heart" size={35} color="#fff" />
+                    <Text style={styles.actionsText}>30.3k</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity>
+                    <Ionicons name="chatbubble-ellipses" size={35} color="#fff" />
+                    <Text style={styles.actionsText}>23k</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity>
+                    <Ionicons name="bookmark" size={35} color="#fff" />
+                </TouchableOpacity>
             </View>
 
 
