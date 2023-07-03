@@ -14,6 +14,11 @@ export function FeedItem( {data} ) {
 
     return (
         <Pressable onPress={handlePlayer}>
+            <View>
+                
+            </View>
+
+
             <Video 
                 ref={video}
                 style={{width: '100%', height: heightScreen }}
