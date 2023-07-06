@@ -1,3 +1,5 @@
+import { useState, useRef } from 'react';
+
 import { 
     View, 
     StyleSheet, 
