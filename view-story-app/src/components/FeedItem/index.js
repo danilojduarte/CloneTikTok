@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons'
 
 const { height: heightScreen } = Dimensions.get("screen")
 
-export function FeedItem( {data} ) {
+export function FeedItem( {data, currentVisibleItem} ) {
     const video = useRef(null);
     const [status, setStatus] = useState({})
 

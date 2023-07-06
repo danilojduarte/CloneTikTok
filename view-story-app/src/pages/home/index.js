@@ -34,6 +34,8 @@ export function Home(){
          }
       ]
 
+      const [showItem, setShowItem] = useState(feedItems[0])
+
 
     return(
         <View style={styles.container}>
@@ -53,7 +55,7 @@ export function Home(){
 
             <FlatList 
             data={feedItems}
-            renderItem={ ( {item} ) => <FeedItem data={item}/> }
+            renderItem={ ( {item} ) => <FeedItem data={item} currentVisibleItem={showItem} /> }
             />
 
             
