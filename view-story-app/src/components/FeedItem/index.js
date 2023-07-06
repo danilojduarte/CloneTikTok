@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-import { View, Text, StyleSheet, Pressable, Dimensions, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Pressable, Dimensions, TouchableOpacity, Platform } from "react-native";
 import {Video } from 'expo-av'
 
 import { Ionicons } from '@expo/vector-icons'
@@ -78,5 +78,11 @@ const styles = StyleSheet.create({
         textShadowColor:'rgba(0, 0, 0, 0.20)',
         textShadowOffset: { width: -1, height: 1.5},
         textShadowRadius: 8,
+    },
+    actions: {
+      position: 'absolute',
+      zIndex: 99,
+      right: 8,
+      bottom: Platform.OS === 'android' ? 120 : 170
     }
 })
