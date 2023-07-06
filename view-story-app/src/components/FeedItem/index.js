@@ -82,7 +82,15 @@ const styles = StyleSheet.create({
     actions: {
       position: 'absolute',
       zIndex: 99,
-      right: 8,
-      bottom: Platform.OS === 'android' ? 120 : 170
+      right: 10,
+      bottom: Platform.OS === 'android' ? 120 : 170,
+      gap: 8,
+    },
+    actionsText: {
+        textAlign: 'center',
+        color: '#fff',
+        textShadowColor:'rgba(0, 0, 0, 0.20)',
+        textShadowOffset: { width: -1, height: 1.5},
+        textShadowRadius: 8,
     }
 })
