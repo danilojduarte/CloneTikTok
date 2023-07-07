@@ -7,10 +7,13 @@ import {
     TouchableOpacity, 
     StatusBar, 
     Platform,
-    FlatList
+    FlatList,
+    Dimensions
  } from 'react-native';
 
  import { FeedItem } from '../../components/FeedItem';
+
+ const { height: heightScreen } = Dimensions.get("screen")
 
 export function Home(){
     let feedItems = [ 
@@ -35,6 +38,11 @@ export function Home(){
       ]
 
       const [showItem, setShowItem] = useState(feedItems[0])
+      const onViewRef = useRef(({ viewabLeItems }) => {
+        if(viewabLeItems && viewabLeItems.lenght > 0){
+            setShowItem(feedItems[viewabLeItems[0].index])
+        }
+      }) 
 
 
     return(
@@ -56,6 +64,16 @@ export function Home(){
             <FlatList 
             data={feedItems}
             renderItem={ ( {item} ) => <FeedItem data={item} currentVisibleItem={showItem} /> }
+            onViewableItemsChanged={onViewRef.current}
+            snapToAlignment='center'
+            snapToInterval={heightScreen}
+            scrollEventThrottle={200}
+            decelerationRate={"fast"}
+            viewabilityConfig={{
+                waitForInteraction: false,
+                viewAreaCoveragePercentThreshold: 100
+            }}
+            showsVerticalScrollIndicator={false}
             />
 
             
