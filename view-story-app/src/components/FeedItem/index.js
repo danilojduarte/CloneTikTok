@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
 import { View, Text, StyleSheet, Pressable, Dimensions, TouchableOpacity, Platform } from "react-native";
 import {Video } from 'expo-av'
 
@@ -9,6 +9,14 @@ const { height: heightScreen } = Dimensions.get("screen")
 export function FeedItem( {data, currentVisibleItem} ) {
     const video = useRef(null);
     const [status, setStatus] = useState({})
+
+    useEffect(() => {
+        if(currentVisibleItem?.id === data?.id){
+            video.current?.playAsync();
+        } else {
+            video.current?.pauseAsync();
+        }
+    },[])
 
     function handlePlayer(){
         status.isPlaying ? video.current?.pauseAsync() : video.current?.playAsync()
